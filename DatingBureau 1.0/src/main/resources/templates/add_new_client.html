@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Client</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/dist/css/bootstrap.css}">
+</head>
+<body>
+
+<div class="d-grid gap-2 col-6 mx-auto text-center">
+
+    <span class="display-6">Add new client</span>
+    <label></label>
+    <form method="post" action="add_client">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">First Name</span>
+            <input id="firstName" type="text" name="firstName" class="form-control"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Last Name</span>
+            <input id="lastName" type="text" name="lastName" class="form-control"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Sex</span>
+            <select class="form-select" name="sex" id="sex">
+                <option value="Female"> Female</option>
+                <option value="Male"> Male</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Characteristics</span>
+            <input id="characteristics" type="text" name="characteristics" class="form-control"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Requirements</span>
+            <input id="requirements" type="text" name="requirements" class="form-control"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+        <input type="submit" class="btn btn-lg btn-outline-dark" value="Add">
+    </form>
+</div>
+
+<script th:src="@{webjars/jquery/3.7.0/dist/jquery.js}"></script>
+<script th:src="@{webjars/popperjs__core/2.11.8/dist/umd/popper.js}"></script>
+<script th:src="@{webjars/bootstrap/5.3.0/dist/js/bootstrap.bundle.js}"></script>
+
+</body>
+</html>>

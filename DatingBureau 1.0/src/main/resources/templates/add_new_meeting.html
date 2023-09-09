@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schedule a meeting</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/dist/css/bootstrap.css}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css"
+          rel="stylesheet"/>
+
+</head>
+<body>
+
+<div class="d-grid gap-2 col-6 mx-auto text-center">
+
+    <span class="display-6">Schedule a meeting</span>
+    <label></label>
+    <form method="post" action="add_meeting">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Client 1</span>
+            <input id="fullname1" type="text" name="fullname1"
+                   th:value="${client1.firstName} + ' ' + ${client1.lastName}"
+                   class="form-control" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Client 1</span>
+            <input id="fullname2" type="text" name="fullname2"
+                   th:value="${client2.firstName} + ' ' + ${client2.lastName}"
+                   class="form-control" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Date</span>
+            <input id="date" name="date" class="form-control" type="date" data-date-format="yyyy-mm-dd"/>
+        </div>
+
+        <input type="hidden" name="id1" th:value="${client1.id}">
+        <input type="hidden" name="id2" th:value="${client2.id}">
+
+        <input type="submit" class="btn btn-lg btn-outline-dark" value="Add">
+    </form>
+
+</div>
+
+<script>
+    let startDate = document.getElementById('startDate')
+    startDate.addEventListener('change', (e) => {
+        let startDateVal = e.target.value
+        document.getElementById('startDateSelected').innerText = startDateVal
+    })
+</script>
+
+<script th:src="@{webjars/jquery/3.7.0/dist/jquery.js}"></script>
+<script th:src="@{webjars/popperjs__core/2.11.8/dist/umd/popper.js}"></script>
+<script th:src="@{webjars/bootstrap/5.3.0/dist/js/bootstrap.bundle.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Client</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/dist/css/bootstrap.css}">
+</head>
+<body>
+
+<div class="d-grid gap-2 col-6 mx-auto text-center">
+
+    <span class="display-6">Make changes here</span>
+    <label></label>
+    <form method="post" action="edit_client">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">First Name</span>
+            <input id="firstName" type="text" name="firstName" th:value="${client.firstName}" class="form-control"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Last Name</span>
+            <input id="lastName" type="text" name="lastName" th:value="${client.lastName}" class="form-control"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Sex</span>
+            <input id="sex" type="text" name="sex" th:value="${client.sex}" class="form-control"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Characteristics</span>
+            <input id="characteristics" type="text" name="characteristics" th:value="${client.characteristics}"
+                   class="form-control" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Requirements</span>
+            <input id="requirements" type="text" name="requirements" th:value="${client.requirements}"
+                   class="form-control" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Status</span>
+            <select class="form-select" name="status" id="status">
+                <option value="active"> active</option>
+                <option value="found a partner"> found a partner</option>
+                <option value="left the project"> left the project</option>
+            </select>
+        </div>
+
+        <input type="hidden" name="id" th:value="${client.id}">
+
+        <input type="submit" class="btn btn-lg btn-outline-dark" value="Update">
+    </form>
+</div>
+
+<script th:src="@{webjars/jquery/3.7.0/dist/jquery.js}"></script>
+<script th:src="@{webjars/popperjs__core/2.11.8/dist/umd/popper.js}"></script>
+<script th:src="@{webjars/bootstrap/5.3.0/dist/js/bootstrap.bundle.js}"></script>
+
+</body>
+</html>
